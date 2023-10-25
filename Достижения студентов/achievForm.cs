@@ -37,20 +37,20 @@ namespace Достижения_студентов
 
             if (int.TryParse(student.Text, out idStudent) && int.TryParse(place.Text, out idPlace) && int.TryParse(stage.Text, out idStage))
             {
-            string insertQuery = "INSERT INTO achievements (idStudent, achievementsName, idPlace, idStage) VALUES (@idStudent, @achievementsName, @idPlace, @idStage)";
-            MainDB.MySqlCommand.Parameters.AddWithValue("@idStudent", idStudent);
-            MainDB.MySqlCommand.Parameters.AddWithValue("@achievementsName", achievementsName);
-            MainDB.MySqlCommand.Parameters.AddWithValue("@idPlace", idPlace);
-            MainDB.MySqlCommand.Parameters.AddWithValue("@idStage", idStage);
+                string insertQuery = "INSERT INTO achievements (idStudent, achievementsName, idPlace, idStage) VALUES (@idStudent, @achievementsName, @idPlace, @idStage)";
+                MainDB.MySqlCommand.Parameters.AddWithValue("@idStudent", idStudent);
+                MainDB.MySqlCommand.Parameters.AddWithValue("@achievementsName", achievementsName);
+                MainDB.MySqlCommand.Parameters.AddWithValue("@idPlace", idPlace);
+                MainDB.MySqlCommand.Parameters.AddWithValue("@idStage", idStage);
 
-            MainDB.MySqlCommand.CommandText = insertQuery;
-            MainDB.MySqlCommand.ExecuteNonQuery();
+                MainDB.MySqlCommand.CommandText = insertQuery;
+                MainDB.MySqlCommand.ExecuteNonQuery();
 
-            MainDB.closeDB();
+                MainDB.closeDB();
 
-            // После добавления обновите DataGridView, чтобы отразить новую запись
-            achievForm_Load(this, null);
-        }
+                // После добавления обновите DataGridView, чтобы отразить новую запись
+                achievForm_Load(this, null);
+            }
 
             else
             {
@@ -90,20 +90,20 @@ namespace Достижения_студентов
                 if (int.TryParse(student.Text, out idStudent) && int.TryParse(place.Text, out idPlace) && int.TryParse(stage.Text, out idStage))
                 {
 
-                string updateQuery = "UPDATE achievements SET idStudent = @idStudent, achievementsName = @achievementsName, idPlace = @idPlace, idStage = @idStage WHERE idAchievements = @idAchievements";
-                MainDB.MySqlCommand.Parameters.AddWithValue("@idStudent", idStudent);
-                MainDB.MySqlCommand.Parameters.AddWithValue("@achievementsName", achievementsName);
-                MainDB.MySqlCommand.Parameters.AddWithValue("@idPlace", idPlace);
-                MainDB.MySqlCommand.Parameters.AddWithValue("@idStage", idStage);
-                MainDB.MySqlCommand.Parameters.AddWithValue("@idAchievements", idAchievements);
+                    string updateQuery = "UPDATE achievements SET idStudent = @idStudent, achievementsName = @achievementsName, idPlace = @idPlace, idStage = @idStage WHERE idAchievements = @idAchievements";
+                    MainDB.MySqlCommand.Parameters.AddWithValue("@idStudent", idStudent);
+                    MainDB.MySqlCommand.Parameters.AddWithValue("@achievementsName", achievementsName);
+                    MainDB.MySqlCommand.Parameters.AddWithValue("@idPlace", idPlace);
+                    MainDB.MySqlCommand.Parameters.AddWithValue("@idStage", idStage);
+                    MainDB.MySqlCommand.Parameters.AddWithValue("@idAchievements", idAchievements);
 
-                MainDB.MySqlCommand.CommandText = updateQuery;
-                MainDB.MySqlCommand.ExecuteNonQuery();
+                    MainDB.MySqlCommand.CommandText = updateQuery;
+                    MainDB.MySqlCommand.ExecuteNonQuery();
 
-                MainDB.closeDB();
+                    MainDB.closeDB();
 
-                achievForm_Load(this, null);
-            }
+                    achievForm_Load(this, null);
+                }
 
                 else
                 {
