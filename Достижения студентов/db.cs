@@ -10,7 +10,7 @@ namespace Достижения_студентов
 {
     internal class db
     {
-        static string dbconnect = "server = localhost; user = root; password = 89244690760Andrey; database = authorization";
+        static string dbconnect = "server = localhost; user = root; password = root; database = authorization";
         static public MySqlDataAdapter MySqlDataAdapter;
         static MySqlConnection MySqlConnection;
         static public MySqlCommand MySqlCommand;
