@@ -20,7 +20,7 @@ namespace Достижения_студентов
         private void back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm form = new AdminForm();
+            studentform form = new studentform();
             form.Show();
         }
 
